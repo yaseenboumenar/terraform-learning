@@ -1,13 +1,15 @@
-# AWS Terraform Setup
+# Terraform AWS EC2 (with module + remote state)
 
-This project provisions AWS infrastructure using Terraform.
+## What this does
 
-## Files
-- `main.tf` – defines the AWS provider and infrastructure
-- `.gitignore` – excludes local and sensitive files from Git
+- Stores state in S3 (and optionally locks with DynamoDB)
+- Provisions an EC2 instance through a local module
+- Allocates an Elastic IP to keep a stable public IP
 
 ## Usage
-1. `terraform init`
-2. `terraform plan`
-3. `terraform apply`
 
+```bash
+terraform init
+terraform workspace new dev
+terraform plan
+terraform apply

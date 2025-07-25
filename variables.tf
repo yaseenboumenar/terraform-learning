@@ -22,3 +22,14 @@ variable "key_name" {
     type        = string
     default     = "terraform-learning"
 }
+
+variable "security_group_ids" {
+  description = "List of security group IDs for the EC2 instance"
+  type        = list(string)
+  default     = []
+}
+
+locals {
+  instance_ami  = "ami-042b4708b1d05f512"
+  instance_type = "t3.micro"
+}
